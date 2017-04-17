@@ -68,7 +68,7 @@ public class SimpleSpawn extends org.bukkit.plugin.java.JavaPlugin implements or
             Location location = player.getLocation();
             World world = player.getLocation().getWorld();
             String worldName = world.getName();
-            if ((commandLabel.equalsIgnoreCase("setspawn")) && (sender.hasPermission("simplespawn.setspawn")) && (sender instanceof Player)) {
+            if ((commandLabel.equalsIgnoreCase("setspawn")) && (sender.hasPermission("simplespawn.setspawn"))) {
                 getConfig().set("spawn.world", worldName);
                 getConfig().set("spawn.x", Double.valueOf(location.getBlockX() + 0.5D));
                 getConfig().set("spawn.y", Double.valueOf(location.getBlockY() + 0.5D));
@@ -84,7 +84,7 @@ public class SimpleSpawn extends org.bukkit.plugin.java.JavaPlugin implements or
                 getConfig().set("worlds." + worldName + ".enabled", true);
                 configReload();
                 player.sendMessage(ChatColor.translateAlternateColorCodes('&', this.prefix) + " §r§aThe global spawn point for all worlds on this server has been updated!");
-            } else if ((commandLabel.equalsIgnoreCase("setworldspawn")) && (sender.hasPermission("simplespawn.setworldspawn")) && (sender instanceof Player)) {
+            } else if ((commandLabel.equalsIgnoreCase("setworldspawn")) && (sender.hasPermission("simplespawn.setworldspawn"))) {
                 int x = location.getBlockX();
                 int y = location.getBlockY();
                 int z = location.getBlockZ();
@@ -98,7 +98,7 @@ public class SimpleSpawn extends org.bukkit.plugin.java.JavaPlugin implements or
                 getConfig().set("worlds." + worldName + ".enabled", true);
                 configReload();
                 player.sendMessage(ChatColor.translateAlternateColorCodes('&', this.prefix) + " §r§aThe spawn point for this world has successfully been updated!");
-            } else if ((commandLabel.equalsIgnoreCase("spawn")) && (sender.hasPermission("simplespawn.spawn")) && (sender instanceof Player)) {
+            } else if ((commandLabel.equalsIgnoreCase("spawn")) && (sender.hasPermission("simplespawn.spawn"))) {
                 if (args.length == 0) {
                     sendToSpawn(player); // The player hasn't specified another player, so we're
                     // going to teleport them to spawn.
@@ -111,13 +111,13 @@ public class SimpleSpawn extends org.bukkit.plugin.java.JavaPlugin implements or
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&', this.prefix) + " §r§4That player does not exist!");
                     }
                 }
-            } else if ((commandLabel.equalsIgnoreCase("simplespawn")) && (sender.hasPermission("simplespawn.info")) && (sender instanceof Player)) {
+            } else if ((commandLabel.equalsIgnoreCase("simplespawn")) && (sender.hasPermission("simplespawn.info"))) {
                 player.sendMessage("§8[§eSimple§6Spawn§8] §bSimpleSpawn v1.0.0, created by §3@wrxck§b.");
                 if (player.hasPermission("simplespawn.reload")) {
                     configReload();
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', this.prefix) + " §r§aReloaded the plugin's configuration file!");
                 }
-            } else if ((commandLabel.equalsIgnoreCase("worldspawn")) && (sender.hasPermission("simplespawn.worldspawn")) && (sender instanceof Player)) {
+            } else if ((commandLabel.equalsIgnoreCase("worldspawn")) && (sender.hasPermission("simplespawn.worldspawn"))) {
                 if (getConfig().getBoolean("worlds." + worldName + ".enabled")) {
                     Location spawnLocation = new Location(world, getConfig().getDouble("worlds." + worldName + ".x"), getConfig().getDouble("worlds." + worldName + ".y"), getConfig().getDouble("worlds." + worldName + ".z"), getConfig().getInt("worlds." + worldName + ".yaw"), getConfig().getInt("worlds." + worldName + ".pitch"));
                     player.teleport(spawnLocation);
