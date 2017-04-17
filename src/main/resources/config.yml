@@ -1,0 +1,20 @@
+# Created by @wrxck.
+version: 1 # Do NOT change this, otherwise the plugin won't initialise.
+prefix: '&8[&eSimple&6Spawn&8]&r'
+clear-inventory-on-join: true
+login:
+  announce-join: true
+  join-message: '&eWelcome, &6%player%&e!'
+sound:
+  enabled: false
+  sound:
+  volume:
+  pitch:
+spawn:
+  x:
+  y:
+  z:
+  yaw:
+  pitch:
+  world:
+worlds:
