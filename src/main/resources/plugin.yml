@@ -1,0 +1,25 @@
+name: SimpleSpawn
+author: wrxck
+version: 1.0.0
+main: pro.wrxck.simplespawn.SimpleSpawn
+commands:
+    setspawn:
+        description: Sets the server's global spawn point to your current position.
+        permission: simplespawn.setspawn
+        permission-message: '§cYou don''t have the permission §7simplespawn.setspawn §crequired to be able to set the this server''s global spawn point!'
+    spawn:
+        description: Teleports you, or the given player, to the spawn point.
+        permission: simplespawn.spawn
+        permission-message: '§cYou don''t have the permission §7simplespawn.spawn §crequired to be able to go to the spawn point!'
+    setworldspawn:
+        description: Sets the world's spawn point to your current position.
+        permission: simplespawn.worldspawn
+        permission-message: '§cYou don''t have the permission §7simplespawn.setworldspawn §crequired to be able to go to this world''s spawn point!'
+    worldspawn:
+        description: Sends you to the world's spawn point.
+        permission: simplespawn.worldspawn
+        permission-message: '§cYou don''t have the permission §7simplespawn.worldspawn §crequired to be able to go to this world''s spawn point!'
+    simplespawn:
+        description: Displays plugin-related information.
+        permission: simplespawn.info
+        permission-message: '§cYou don''t have the permission §7simplespawn.info §crequired to be able to view information about this plugin!'
